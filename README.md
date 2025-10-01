@@ -1,26 +1,46 @@
-# AI Squat Tracker
+# AI Squat Tracker (Capstone Project)
 
-Capstone project at CU Boulder. The goal is to provide real-time squat form feedback using computer vision and machine learning.
+Senior capstone project at CU Boulder.  
+Real-time squat tracking system using computer vision + machine learning.  
+The goal: give live feedback on squat form to improve safety and performance.
 
-## Results
-Example training run (YOLOv8):
-![Training curves](assets/modelV1_Curves.png)
+---
 
-Key metrics:
-- Precision: 0.78
-- Recall: 0.82
-- mAP@50: 0.87
-- mAP@50-95: 0.61
+## 🚀 Features
+- Real-time pose detection with **MediaPipe** + **OpenCV**
+- **FastAPI** backend with health check endpoint
+- Live webcam demo for pose landmark tracking
+- Model training with **YOLOv8** for barbell detection and rep analysis
+- Visualized training metrics (loss curves, precision, recall, mAP)
 
-## Repo Structure
-- `main.py` — FastAPI server with health check
-- `pose_webcam_demo.py` — MediaPipe Pose demo using webcam + OpenCV
-- `test_imports.py` — simple dependency check
-- `requirements.txt` — environment setup
+---
 
-## Quickstart
-Clone the repo and install requirements:
+## 📊 Training Results
+Example from our first trained YOLOv8 model:
+
+![Training Results](assets/modelV1_Curves.png)
+
+---
+
+## 📂 Repo Structure
+- `main.py` → FastAPI server with health check
+- `pose_webcam_demo.py` → Live demo with MediaPipe + OpenCV
+- `test_imports.py` → Verifies dependencies are installed correctly
+- `requirements.txt` → Environment setup
+- `/notebooks` → Model training and analysis
+- `/results` → Training outputs + metrics
+- `/assets` → Images and plots
+
+---
+
+## ⚡ Quickstart
 ```bash
-git clone https://github.com/matthewcicero/ai-squat-tracker.git
-cd ai-squat-tracker
+# clone the repo
+git clone https://github.com/matthewcicero/ai-computer-vision-squat-tracker.git
+cd ai-computer-vision-squat-tracker
+
+# install dependencies
 pip install -r requirements.txt
+
+# run a quick demo
+python pose_webcam_demo.py
